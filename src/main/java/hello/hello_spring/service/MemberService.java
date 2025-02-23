@@ -3,6 +3,8 @@ package hello.hello_spring.service;
 import hello.hello_spring.domain.Member;
 import hello.hello_spring.repository.MemberRepository;
 import hello.hello_spring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +16,8 @@ public class MemberService {
     //MemberService가 MemoryMemberRepository에 강하게 의존하게 되어, 다른 구현체로 쉽게 변경하거나 테스트하기 어려운 구조가 된다.
     //->
     private final MemberRepository memberRepository;
+
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
        this.memberRepository = memberRepository;
     }

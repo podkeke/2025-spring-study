@@ -1,9 +1,13 @@
 package hello.hello_spring.repository;
 
 import hello.hello_spring.domain.Member;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import java.util.*;
 
 // HashMap을 사용하여 메모리에 회원 정보를 저장하는 **임시 저장소**
+//@Repository
 public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>(); // 회원 정보를 저장하는 Map (Key: 회원 ID, Value: Member 객체)
